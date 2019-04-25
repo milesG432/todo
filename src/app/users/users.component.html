@@ -1,0 +1,29 @@
+<div class="container">
+    
+    <div style="text-align:center">
+      <h1>{{ title }}</h1>
+      <img width="300" alt="Angular Logo" src="assets/img/auto.png">
+    </div>
+ 
+    
+    <h2>{{ quote }}</h2>
+    <i>{{ author }}</i>
+    <hr>
+    <table class="table" [@listStagger]="users$">
+      <thead class="thead-dark">
+        <tr>            
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Website</th>        
+        </tr>
+      </thead>
+      <tbody>        
+        <tr *ngFor="let user of users$">                                
+            <td><a routerLink="/details/{{user.id}}">{{ user.name }}</a></td>
+            <td><a routerLink="/details/{{user.id}}">{{ user.email }}</a></td>
+            <td><a routerLink="/details/{{user.id}}">{{ user.website }}</a></td>            
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
